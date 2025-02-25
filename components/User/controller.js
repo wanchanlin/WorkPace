@@ -1,15 +1,39 @@
-const userModel = require("./model");
+const bcrypt = require('bcrypt');
+const userModel = require('./model');
 
-//retrieve user and render user page
-const getUser = async (request, response) => {
-  if (request.session.loggedIn) {
-    response.render("user/user", { username: request.session.user });
-  } else {
-    //if session variable not set, user is not logged in
-    //redirect to login page
-    response.redirect("/user/login");
+exports.loginForm = (req, res) => {
+  res.render('user/login');
+};
+
+exports.login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await userModel.findByEmail(email);
+
+    if (!user) {
+      return res.render('user/login', { error: 'Invalid email or password' });
+    }
+
+    const validPassword = await bcrypt.compare(password, user.password);
+    if (!validPassword) {
+      return res.render('user/login', { error: 'Invalid email or password' });
+    }
+
+    // Set user session
+    req.session.userId = user._id;
+    req.session.userRole = user.role;
+    
+    res.redirect('/');
+  } catch (error) {
+    console.error('Login error:', error);
+    res.render('user/login', { error: 'An error occurred during login' });
   }
-}
+};
+
+exports.logout = (req, res) => {
+  req.session.destroy();
+  res.redirect('/user/login');
+};
 const loginForm = (request, response) => {
   response.render("user/login");
 }
