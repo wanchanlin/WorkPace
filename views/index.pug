@@ -8,7 +8,8 @@ block layout-content
     table
       thead
         tr
-          th Position Name
+          th Name
+          th Position Title
           th Email
           th Role
           th Hire Date
@@ -16,7 +17,8 @@ block layout-content
       tbody
         each position in positions
           tr
-            td #{position.fullName}, #{position.title}
+            td #{position.fullName}
+            td #{position.title}
             td #{position.email}
             td #{position.role}
             td #{position.hireDate ? position.hireDate.toISOString().split("T")[0] : "N/A"}
