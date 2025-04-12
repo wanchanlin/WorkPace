@@ -2,6 +2,11 @@
 
 const positionModel = require("./model");
 
+
+const welcome = (request, response) => {
+  response.render("index");
+};
+
 const getAllPositions = async (request, response) => {
   let positionList = await positionModel.getPositions();
   //if there's nothing in the pets collection, initialize with some content then get the pets again
@@ -9,7 +14,7 @@ const getAllPositions = async (request, response) => {
     await positionModel.initializePositions(); 
     positionList = await positionModel.getPositions();
   }
-  response.render("index", { positions: positionList });
+  response.render("info", { positions: positionList });
 };
 
 const getAddForm = (request, response) => {
@@ -104,6 +109,8 @@ const getPositionApi = async (request, response) => {
 };
 
 module.exports = {
+  welcome,
+  // getPositionApi,  // Added getPositionApi function
   getAllPositions,
   getAddForm,
   addPosition,

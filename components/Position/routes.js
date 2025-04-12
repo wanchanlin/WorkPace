@@ -3,7 +3,8 @@ const router = express.Router();
 
 const positionController = require("./controller");
 
-router.get("/", positionController.getAllPositions);
+router.get("/", positionController.welcome);
+router.get("/info", positionController.getAllPositions);
 router.get("/addPosition", positionController.getAddForm);  
 router.post("/addPosition", positionController.addPosition);
 
