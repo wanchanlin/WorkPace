@@ -11,10 +11,19 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || "8887";
 
-//set up application template engine
-app.set("views", path.join(__dirname, "views")); //the first "views" is the setting name
-//the second value above is the path: __dirname/views
-app.set("view engine", "pug");
+// //set up application template engine
+// app.set("views", path.join(__dirname, "views")); //the first "views" is the setting name
+// //the second value above is the path: __dirname/views
+// app.set("view engine", "pug");
+
+// Serve the React build in production
+const clientBuildPath = path.join(__dirname, "client", "dist"); // or "build" if CRA
+app.use(express.static(clientBuildPath));
+
+// For React Router fallback
+app.get("*", (req, res) => {
+  res.sendFile(path.join(clientBuildPath, "index.html"));
+});
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
