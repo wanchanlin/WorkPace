@@ -4,18 +4,24 @@ import { Link } from "react-router-dom";
 export default function PositionList() {
   const [positions, setPositions] = useState([]);
 
+  // 👇 Using VITE_API_URL from .env
+  const API = import.meta.env.VITE_API_URL;
+
   useEffect(() => {
-    fetch("/positions")
+    fetch(`${API}/positions`)
       .then(res => res.json())
       .then(data => setPositions(data))
       .catch(err => console.error("Failed to load positions:", err));
-  }, []);
+  }, [API]);
 
   const handleDelete = async (id) => {
     const confirmed = window.confirm("Are you sure you want to delete this position?");
     if (!confirmed) return;
 
-    await fetch(`/delete/${id}`, { method: "POST" });
+    await fetch(`${API}/delete/${id}`, {
+      method: "POST",
+    });
+
     setPositions(prev => prev.filter(p => p._id !== id));
   };
 
