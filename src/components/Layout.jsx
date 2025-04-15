@@ -24,7 +24,6 @@ export default function Layout() {
           </button>
           {/* <a href="/user/login">Login</a> */}
           <Link to="Login">Login</Link>
-          <Link to="Info">Info</Link>
 
           
         </nav>
