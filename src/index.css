@@ -1,6 +1,6 @@
 :root[data-theme='light'] {
   --text-color: #213547;
-  --background-color: #ffffff;
+  --background-color: #e0e0e0de;
   --button-text-color: #ffffff;
   --button-bg: #646cff;
 }
