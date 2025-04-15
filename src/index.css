@@ -1,9 +1,8 @@
 :root[data-theme='light'] {
   --text-color: #213547;
-  --background-color: #e0e0e0de;
+  --background-color: #cececede;
   --button-text-color: #ffffff;
   --button-bg: #646cff;
-  
 }
 
 :root[data-theme='dark'] {
