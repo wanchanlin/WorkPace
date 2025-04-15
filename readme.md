@@ -1,12 +1,26 @@
-# React + Vite
+# 🌐 Work-Pace
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Work-Pace** is a productivity-focused web application designed to help users structure their work sessions with built-in break reminders and task management tools. It encourages healthy work habits by balancing productivity and well-being through features like customizable timers, session tracking, and break scheduling.
 
-Currently, two official plugins are available:
+## 🔧 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🕒 Pomodoro-style timer with customizable durations for work and break sessions  
+- ✅ Simple task management for organizing daily goals  
+- 📈 Session tracking to monitor productivity patterns  
+- 🌙 Light/Dark mode toggle for better user comfort  
+- ⏸️ Auto-break reminders to reduce burnout and fatigue  
 
-## Expanding the ESLint configuration
+## 🚀 Live Demo
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+👉 [https://work-pace.vercel.app/](https://work-pace.vercel.app/)
+
+## 🛠️ Tech Stack
+
+- **Frontend**: HTML, CSS, JavaScript  
+- **Framework/Library**: *(Add if any, e.g., React, Vue, etc.)*  
+- **Deployment**: Vercel  
+
+## 📌 Purpose
+
+This project was built as part of a workshop assignment to explore web development best practices, UI/UX considerations, and productivity app design. It also serves as a portfolio piece demonstrating front-end skills and user-focused development.
+
