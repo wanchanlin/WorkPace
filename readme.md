@@ -23,3 +23,4 @@
 ## 📌 Purpose
 
 This project was built as part of a workshop assignment to explore web development best practices, UI/UX considerations, and productivity app design. It also serves as a portfolio piece demonstrating front-end skills and user-focused development.
+
