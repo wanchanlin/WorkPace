@@ -14,6 +14,7 @@ export default function Info() {
 
         setPositions(data); // 🔧 FIXED: you had setCategories(data), which doesn't exist
         setLoading(false);
+        
       } catch (err) {
         console.error("Error fetching positions:", err);
         setError("Could not load positions. Please check the API URL and network connection.");
