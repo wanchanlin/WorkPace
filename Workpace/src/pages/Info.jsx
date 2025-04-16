@@ -4,22 +4,15 @@ export default function Info() {
   const [positions, setPositions] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-
-  // const API_URL = "https://workpace-pug.vercel.app/api";
-  const API_URL = "data.json"; // Replace with your actual API URL
-  
   useEffect(() => {
-    const fetchData = async () => {
+    const getPositions = async () => {
       try {
-        setLoading(true);
-        const response = await fetch(API_URL);
+        const response = await fetch("https://workpace-pug.vercel.app/api");
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
+        // 🔧 FIXED: use .json() instead of a nonexistent method like API_URLjson()
+        const data = await response.json(); // <-- THIS LINE WAS WRONG
 
-        const data = await response.json();
-        setPositions(data);
+        setPositions(data); // 🔧 FIXED: you had setCategories(data), which doesn't exist
         setLoading(false);
       } catch (err) {
         console.error("Error fetching positions:", err);
@@ -28,8 +21,34 @@ export default function Info() {
       }
     };
 
-    fetchData();
+    getPositions();
   }, []);
+
+  // const API_URL = "https://workpace-pug.vercel.app/api";
+  // const API_URL = "data.json"; // Replace with your actual API URL
+  
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       setLoading(true);
+  //       const response = await fetch(API_URL);
+
+  //       if (!response.ok) {
+  //         throw new Error(`HTTP error! Status: ${response.status}`);
+  //       }
+
+  //       const data = await response.json();
+  //       setPositions(data);
+  //       setLoading(false);
+  //     } catch (err) {
+  //       console.error("Error fetching positions:", err);
+  //       setError("Could not load positions. Please check the API URL and network connection.");
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, []);
 
   // useEffect(() => {
   //   // 模拟API调用
