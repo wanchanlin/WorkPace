@@ -3,6 +3,8 @@
   --background-color: #dfdfdf;
   --button-text-color: #ffffff;
   --button-bg: #646cff;
+  --card-bg: #ffffff;
+  --card--text:#213547;
 }
 
 :root[data-theme='dark'] {
@@ -10,6 +12,8 @@
   --background-color: #242424;
   --button-text-color: #ffffff;
   --button-bg: #646cff;
+  --card-bg: #333;
+  --card--text:#ffffffde;
 }
 
 a {
@@ -125,7 +129,8 @@ button:focus-visible {
 
 /* Card Style */
 .card {
-  background-color: #ffffff;
+  background-color: var(--background-color);
+  color: var(--card--text);
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -224,7 +229,6 @@ button:focus-visible {
   /* Error Messages */
   .error-message {
     background-color: #f8d7da;
-   
     padding: 10px;
     border: 1px solid #f5c6cb;
     border-radius: 5px;
