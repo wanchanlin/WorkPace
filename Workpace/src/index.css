@@ -106,7 +106,7 @@ button:focus-visible {
   align-items: center;
 }
 
-  /* Navigation */
+
   nav a {
 
     text-decoration: none;
@@ -115,7 +115,39 @@ button:focus-visible {
     transition: background-color 0.3s;
   }
 
-  
+  /* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 20px;
+}
+
+/* Card Style */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.4em;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1em;
+  line-height: 1.6;
+}
+
 .table-container {
    
     margin:  auto;
@@ -174,7 +206,7 @@ button:focus-visible {
   
   /* General Layout */
   .container {
-    max-width: 600px;
+    max-width: 1440px;
     margin: 50px auto;
     padding: 20px;
  
