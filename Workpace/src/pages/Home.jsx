@@ -27,14 +27,7 @@ export default function Home() {
             </div>
           </div>
   
-          <div className="recent-activity">
-            <h3>🔍 Recent HR Actions</h3>
-            <ul>
-              <li><span>📅 2024-02-20</span> <p><strong>John Doe</strong> joined the HR department.</p></li>
-              <li><span>📅 2024-02-18</span> <p><strong>Jane Smith</strong> promoted to Senior Developer.</p></li>
-              <li><span>📅 2024-02-15</span> <p><strong>Finance Department</strong> created.</p></li>
-            </ul>
-          </div>
+         
         </div>
       </div>
     );

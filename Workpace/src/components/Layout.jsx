@@ -6,27 +6,42 @@ export default function Layout() {
     return localStorage.getItem("theme") || "light";
   });
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
   }, [theme]);
 
+  const handleLinkClick = () => setMenuOpen(false); // Close on click
+
   return (
     <>
       <header className="header">
         <nav className="nav">
-          <Link to="/">Home</Link>
-          {/* <Link to="/positions">Position List</Link>
-          <Link to="/addPosition">Add Position</Link> */}
-          
-          <button onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-            Toggle {theme === "light" ? "Dark" : "Light"}
-          </button>
-          {/* <a href="/user/login">Login</a> */}
-          <Link to="Login">Login</Link>
-          <Link to="Info">Info</Link>
+          <div className="logo">
+            <Link to="/" onClick={handleLinkClick}>Work-Pace</Link>
+          </div>
 
-          
+          <button
+            className="menu-toggle"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            ☰
+          </button>
+
+          <div className={`nav-links ${menuOpen ? "show" : ""}`}>
+            <Link to="/" onClick={handleLinkClick}>Home</Link>
+            {/* <Link to="Login" onClick={handleLinkClick}>Login</Link> */}
+            <Link to="Info" onClick={handleLinkClick}>Info</Link>
+            <button
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+              className="theme-toggle"
+            >
+              Toggle {theme === "light" ? "Dark" : "Light"}
+            </button>
+          </div>
         </nav>
       </header>
 
