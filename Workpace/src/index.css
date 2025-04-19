@@ -1,9 +1,10 @@
 :root[data-theme='light'] {
   --primary-color: #747bff;
   --text-color: #213547;
-  --background-color: #dfdfdf;
+  --background-color: #e3e4f5;
   --button-text-color: #ffffff;
   --button-bg: #646cff;
+  --container-bg:#fff;
   --card-bg: #ffffff;
   --card--text:#213547;
 
@@ -11,10 +12,11 @@
 
 :root[data-theme='dark'] {
   --text-color: #ffffffde;
-  --background-color: #242424;
+  --background-color: #1c1f49;
   --button-text-color: #ffffff;
   --button-bg: #646cff;
-  --card-bg: #333;
+  --container-bg:#2b2f6b;
+  --card-bg: rgb(138, 138, 138)272;
   --card--text:#ffffffde;
 }
 
@@ -59,6 +61,10 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+tbody{
+  background-color: var(--container-bg);
+
+}
   
   /* Header */
   header#header {
@@ -156,7 +162,6 @@ button:focus-visible {
 }
 
 .table-container {
-   
     margin:  auto;
   }
   
@@ -174,8 +179,8 @@ button:focus-visible {
   }
   
   th {
+    color:#fff;
     background-color: var(--primary-color);
-  
     font-size: 1.1em;
   }
   
@@ -213,6 +218,7 @@ button:focus-visible {
   
   /* General Layout */
   .container {
+    background-color: var(--container-bg);
     max-width: 1440px;
     margin: 50px auto;
     padding: 20px;
